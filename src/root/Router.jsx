@@ -4,7 +4,7 @@ import Regist from "../pages/Regist/Regist.jsx";
 const Router = () => {
     return (
         <Routes>
-            <Route path={"/registers"} element={<Regist />}/>
+            <Route path={"/register"} element={<Regist />}/>
         </Routes>
     );
 };
