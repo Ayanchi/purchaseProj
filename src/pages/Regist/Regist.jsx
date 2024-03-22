@@ -9,7 +9,21 @@ const Regist = () => {
         watch
     } = useForm()
 
-    const onSubmit = (data) => {console.log(data)}
+    const onSubmit = async(data) => {
+        const dataUser = {
+            firstname: data.firstname,
+            lastname: data.lastname,
+            email: data.mail,
+            password: data.password
+        }
+        console.log(dataUser)
+        try {
+            const res = await apiService.post('/api/v1/auth/register', dataUser)
+            console.log(res);
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
         <div id={classes.form} className="flex_container full-page">
